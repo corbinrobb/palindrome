@@ -1,16 +1,9 @@
+module.exports = Phrase;
+
 // Adds `reverse` to all strings.
 String.prototype.reverse = function reverse() {
   return Array.from(this).reverse().join("");
 }
-
-// String.prototype.blank = function() {
-//   return !!this.match(/^\s*$/g);
-// }
-
-Array.prototype.last = function() {
-  return this.slice(-1)[0];
-}
-
 
 // Defines a Phrase object.
 function Phrase(content) {
@@ -29,8 +22,4 @@ function Phrase(content) {
   this.palindrome = function palindrome() {
     return this.processedContent() === this.processedContent().reverse();
   }
-}
-
-String.prototype.palindrome = function palindrome() {
-  return new Phrase(this).palindrome();
 }
